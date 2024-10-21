@@ -1,0 +1,1095 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.oven.vcas</groupId>
+    <artifactId>vcas</artifactId>
+    <version>2.0.0</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jar.version>${version}</jar.version>
+
+        <!-- <artoolkitplus.version>2.3.1-1.5.6</artoolkitplus.version> -->
+        <!-- <librealsense.version>1.12.4-1.5.6</librealsense.version> -->
+        <!-- <flycapture.version>2.13.3.31-1.5.6</flycapture.version> -->
+        <!-- <libfreenect2.version>0.2.0-1.5.6</libfreenect2.version> -->
+        <!-- <libfreenect.version>0.5.7-1.5.6</libfreenect.version> -->
+        <!-- <videoinput.version>0.200-1.5.6</videoinput.version> -->
+        <!-- <leptonica.version>1.81.1-1.5.6</leptonica.version> -->
+        <!-- <libdc1394.version>2.2.6-1.5.6</libdc1394.version> -->
+        <!-- <tesseract.version>4.1.1-1.5.6</tesseract.version> -->
+        <!-- <flandmark.version>1.07-1.5.6</flandmark.version> -->
+        <!-- <openblas.version>0.3.17-1.5.6</openblas.version> -->
+        <!-- <javacpp.platform>${platform}</javacpp.platform> -->
+        <!-- <opencv.version>4.5.3-1.5.6</opencv.version> -->
+        <!-- <ffmpeg.version>4.4-1.5.6</ffmpeg.version> -->
+        <!-- <javacpp.version>1.5.6</javacpp.version> -->
+        <!-- <javacv.version>1.5.6</javacv.version> -->
+
+        <artoolkitplus.version>2.3.1-1.5.5</artoolkitplus.version>
+        <librealsense.version>1.12.4-1.5.5</librealsense.version>
+        <flycapture.version>2.13.3.31-1.5.5</flycapture.version>
+        <libfreenect2.version>0.2.0-1.5.5</libfreenect2.version>
+        <libfreenect.version>0.5.7-1.5.5</libfreenect.version>
+        <videoinput.version>0.200-1.5.5</videoinput.version>
+        <leptonica.version>1.80.0-1.5.5</leptonica.version>
+        <libdc1394.version>2.2.6-1.5.5</libdc1394.version>
+        <tesseract.version>4.1.1-1.5.5</tesseract.version>
+        <flandmark.version>1.07-1.5.5</flandmark.version>
+        <openblas.version>0.3.13-1.5.5</openblas.version>
+        <javacpp.platform>${platform}</javacpp.platform>
+        <opencv.version>4.5.1-1.5.5</opencv.version>
+        <ffmpeg.version>4.3.2-1.5.5</ffmpeg.version>
+        <javacpp.version>1.5.5</javacpp.version>
+        <javacv.version>1.5.5</javacv.version>
+
+        <java.version>1.8</java.version>
+
+        <git.user.name>Oven</git.user.name>
+        <git.user.email>503612012@qq.com</git.user.email>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.oven.basic</groupId>
+            <artifactId>basic</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.oven.javacv</groupId>
+            <artifactId>javacv</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- license -->
+        <dependency>
+            <groupId>com.oven.license</groupId>
+            <artifactId>client</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <!-- web启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- lombok支持 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- <dependency> -->
+        <!--     <groupId>de.codecentric</groupId> -->
+        <!--     <artifactId>spring-boot-admin-starter-client</artifactId> -->
+        <!--     <version>2.1.6</version> -->
+        <!-- </dependency> -->
+
+        <!-- 接口文档 -->
+        <dependency>
+            <groupId>com.github.xiaoymin</groupId>
+            <artifactId>knife4j-spring-boot-starter</artifactId>
+            <version>2.0.8</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.plugin</groupId>
+                    <artifactId>spring-plugin-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.plugin</groupId>
+            <artifactId>spring-plugin-core</artifactId>
+            <version>2.0.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>3.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-annotations</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.22</version>
+        </dependency>
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-models</artifactId>
+            <version>1.5.22</version>
+        </dependency>
+
+        <!-- jpa支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- 数据库连接池 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.2.14</version>
+        </dependency>
+
+        <!-- hutool -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.9</version>
+        </dependency>
+
+        <!-- guava支持 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>31.1-jre</version>
+        </dependency>
+
+        <!-- shiro支持 -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <!--suppress MavenPackageUpdate -->
+            <version>1.8.0</version>
+        </dependency>
+
+        <!-- thymeleaf启动器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- websocket支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
+        <!-- json支持 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>2.0.21</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.javadelight</groupId>
+            <artifactId>delight-nashorn-sandbox</artifactId>
+            <version>0.2.5</version>
+        </dependency>
+
+        <!-- joda-time依赖 -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>
+
+        <!-- AOP支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+
+        <!-- 文件上传 -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- commons工具类 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+
+        <!-- java远程shell调用 -->
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>0.1.55</version>
+        </dependency>
+
+        <!-- pom文件解析工具类 -->
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-model</artifactId>
+            <version>3.8.5</version>
+        </dependency>
+
+        <!-- 视频处理依赖包-开始 -->
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv</artifactId>
+            <version>${javacv.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv-platform</artifactId>
+            <version>${javacv.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>artoolkitplus</artifactId>
+            <version>${artoolkitplus.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>artoolkitplus-platform</artifactId>
+            <version>${artoolkitplus.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>artoolkitplus</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>ffmpeg</artifactId>
+            <version>${ffmpeg.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>ffmpeg</artifactId>
+            <version>${ffmpeg.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>ffmpeg-platform</artifactId>
+            <version>${ffmpeg.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>flandmark</artifactId>
+            <version>${flandmark.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>flandmark</artifactId>
+            <version>${flandmark.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>flandmark-platform</artifactId>
+            <version>${flandmark.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>flandmark</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>flycapture</artifactId>
+            <version>${flycapture.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>flycapture-platform</artifactId>
+            <version>${flycapture.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>leptonica</artifactId>
+            <version>${leptonica.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>leptonica</artifactId>
+            <version>${leptonica.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>leptonica-platform</artifactId>
+            <version>${leptonica.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libdc1394</artifactId>
+            <version>${libdc1394.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libdc1394</artifactId>
+            <version>${libdc1394.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libdc1394-platform</artifactId>
+            <version>${libdc1394.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libfreenect</artifactId>
+            <version>${libfreenect.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libfreenect</artifactId>
+            <version>${libfreenect.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libfreenect-platform</artifactId>
+            <version>${libfreenect.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libfreenect2</artifactId>
+            <version>${libfreenect2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libfreenect2</artifactId>
+            <version>${libfreenect2.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>libfreenect2-platform</artifactId>
+            <version>${libfreenect2.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>librealsense</artifactId>
+            <version>${librealsense.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>librealsense</artifactId>
+            <version>${librealsense.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>librealsense-platform</artifactId>
+            <version>${librealsense.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>opencv</artifactId>
+            <version>${opencv.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>opencv-platform</artifactId>
+            <version>${opencv.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>opencv</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>openblas</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>javacpp</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>tesseract</artifactId>
+            <version>${tesseract.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>tesseract</artifactId>
+            <version>${tesseract.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>tesseract-platform</artifactId>
+            <version>${tesseract.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>tesseract</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>videoinput</artifactId>
+            <version>${videoinput.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>videoinput-platform</artifactId>
+            <version>${videoinput.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>openblas</artifactId>
+            <version>${openblas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>openblas</artifactId>
+            <version>${openblas.version}</version>
+            <classifier>${javacpp.platform}</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>openblas-platform</artifactId>
+            <version>${openblas.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.bytedeco</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacpp</artifactId>
+            <version>${javacpp.version}</version>
+        </dependency>
+        <!-- 视频处理依赖包-结束 -->
+    </dependencies>
+
+    <profiles>
+        <profile>
+            <!-- 开发环境 -->
+            <id>dev</id>
+            <properties>
+                <profile>dev</profile>
+                <platform>macosx-x86_64</platform>
+                <!-- <platform>windows-x86_64</platform> -->
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <!-- 生产环境 -->
+            <id>pro</id>
+            <properties>
+                <profile>pro</profile>
+                <platform>linux-x86_64</platform>
+            </properties>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <name>nexus-aliyun</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+
+        <repository>
+            <id>nexus-oven</id>
+            <name>nexus-oven</name>
+            <url>http://maven.qqxki.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-oven</id>
+            <name>nexus-oven</name>
+            <url>http://maven.qqxki.com/nexus/content/groups/public/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <releases>
+                <updatePolicy>never</updatePolicy>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+
+    <build>
+        <plugins>
+            <!-- 指定编译jdk版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+            <!-- 代码格式检查 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>9.3</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.oven.checkstyle</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>1.0.0</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                    <propertyExpansion>maxMethodLength=120</propertyExpansion>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 将第三方依赖打包到lib目录 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/lib/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- jar包中去掉第三方依赖 -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.0.2.RELEASE</version>
+                <configuration>
+                    <layout>ZIP</layout>
+                    <includes>
+                        <include>
+                            <groupId>non-exists</groupId>
+                            <artifactId>non-exists</artifactId>
+                        </include>
+                    </includes>
+                </configuration>
+            </plugin>
+
+            <!-- 拷贝资源文件到resources目录 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-resources</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <!-- 开启filtering功能后，打包时会破坏二进制内容的文件，因此这里将其排除 -->
+                            <nonFilteredFileExtensions>
+                                <nonFilteredFileExtension>pdf</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>ico</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                                <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                            </nonFilteredFileExtensions>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                    <filtering>true</filtering>
+                                    <excludes>
+                                        <!-- 不拷贝js和css文件，由下边的插件进行压缩拷贝 -->
+                                        <exclude>**/*.js</exclude>
+                                        <exclude>**/*.css</exclude>
+                                    </excludes>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/resources</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-min-file</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>src/main/resources</directory>
+                                    <includes>
+                                        <include>**/*min.js</include>
+                                        <include>**/*min.css</include>
+                                        <include>**/monaco-editor/**</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/resources</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <!-- 拷贝启动脚本到根目录 -->
+                    <execution>
+                        <id>copy-shell</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${project.basedir}</directory>
+                                    <includes>
+                                        <include>*.sh</include>
+                                    </includes>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${project.build.directory}/</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 压缩拷贝js和css文件 -->
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>yuicompressor-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>compress</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!-- 读取js,css文件采用UTF-8编码 -->
+                    <encoding>UTF-8</encoding>
+                    <!-- 若存在已压缩的文件，会先对比源文件是否有改动，有改动便压缩，无改动就不压缩 -->
+                    <force>true</force>
+                    <!-- 不显示js可能的错误 -->
+                    <jswarn>false</jswarn>
+                    <!-- 压缩之前先执行聚合文件操作 -->
+                    <preProcessAggregates>true</preProcessAggregates>
+                    <!-- 是否不添加min后缀 -->
+                    <nosuffix>true</nosuffix>
+                    <!-- 在指定的列号后插入新行 -->
+                    <linebreakpos>-1</linebreakpos>
+                    <sourceDirectory>src/main/resources</sourceDirectory>
+                    <outputDirectory>${project.build.directory}/resources</outputDirectory>
+                    <includes>
+                        <include>**/*.js</include>
+                        <include>**/*.css</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/*min.js</exclude>
+                        <exclude>**/*min.css</exclude>
+                        <exclude>**/monaco-editor/**</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+
+            <!-- 自动生成git版本号 -->
+            <plugin>
+                <groupId>pl.project13.maven</groupId>
+                <artifactId>git-commit-id-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>get-the-git-infos</id>
+                        <goals>
+                            <goal>revision</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <dotGitDirectory>${project.basedir}/.git</dotGitDirectory>
+                    <prefix>git</prefix>
+                    <verbose>true</verbose>
+                    <dateFormat>yyyy-MM-dd'T'HH:mm:ssZ</dateFormat>
+                    <!-- 是否生 git.properties 属性文件 -->
+                    <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                    <!-- 生成版本信息文件名 -->
+                    <generateGitPropertiesFilename>${project.build.outputDirectory}/git.properties</generateGitPropertiesFilename>
+                    <format>json</format>
+                    <!-- git描述配置,可选;由JGit提供实现 -->
+                    <gitDescribe>
+                        <!-- 是否生成描述属性 -->
+                        <skip>false</skip>
+                        <!-- 提交操作未发现tag时,仅打印提交操作ID -->
+                        <always>false</always>
+                        <!-- 提交操作ID显式字符长度,最大值为:40;默认值:7; 0代表特殊意义;后面有解释; -->
+                        <abbrev>7</abbrev>
+                        <!-- 构建触发时,代码有修改时(即"dirty state"),添加指定后缀;默认值:""; -->
+                        <dirty>-dirty</dirty>
+                    </gitDescribe>
+                </configuration>
+            </plugin>
+
+            <!-- 字节码加密 -->
+            <plugin>
+                <groupId>com.oven.encryjar</groupId>
+                <artifactId>encryjar-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <configuration>
+                    <password>Cyeg4HM6gmg0nMEpkz7CwA==</password>
+                    <packages>com.oven.vcas</packages>
+                    <classpath>${project.build.directory}/lib</classpath>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>encryjar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.10</version>
+                <executions>
+                    <execution>
+                        <id>timestamp-property</id>
+                        <goals>
+                            <goal>timestamp-property</goal>
+                        </goals>
+                        <configuration>
+                            <name>build.time</name>
+                            <pattern>yyyy.MMdd.HHmmss</pattern>
+                            <locale>zh_CN</locale>
+                            <timeZone>Asia/Shanghai</timeZone>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- 整理release文件夹 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>1.8</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant</artifactId>
+                        <version>1.10.9</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>copy</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="start copy Dockerfile to target folder"/>
+                                <copy file="src/main/release/Dockerfile" tofile="${project.build.directory}/Dockerfile"/>
+                                <echo message="finish copy Dockerfile to target folder"/>
+                                <echo message="start copy shell to target folder"/>
+                                <copy todir="${project.build.directory}/">
+                                    <fileset dir="src/main/release/">
+                                        <include name="*.sh"/>
+                                    </fileset>
+                                </copy>
+                                <echo message="finish copy shell to target folder"/>
+                                <echo message="start copy backup to target folder"/>
+                                <copy file="src/main/release/backup" tofile="${project.build.directory}/backup"/>
+                                <echo message="finish copy backup"/>
+                                <echo message="start copy vcas.sql to target folder"/>
+                                <copy file="src/main/release/vcas.sql" tofile="${project.build.directory}/vcas.sql"/>
+                                <echo message="finish copy vcas.sql"/>
+                                <echo message="start copy jdk-8u341-linux-x64.tar.gz to target folder"/>
+                                <copy file="src/main/release/jdk-8u341-linux-x64.tar.gz" tofile="${project.build.directory}/jdk-8u341-linux-x64.tar.gz"/>
+                                <echo message="finish copy jdk-8u341-linux-x64.tar.gz"/>
+                                <echo message="start copy nginx.tar.gz to target folder"/>
+                                <copy file="src/main/release/nginx.tar.gz" tofile="${project.build.directory}/nginx.tar.gz"/>
+                                <echo message="finish copy nginx.tar.gz"/>
+                                <echo message="start copy simsun.ttf to target folder"/>
+                                <copy file="src/main/release/simsun.ttf" tofile="${project.build.directory}/simsun.ttf"/>
+                                <echo message="finish copy simsun.ttf"/>
+                                <echo message="start mkdir license"/>
+                                <mkdir dir="${project.build.directory}/license"/>
+                                <echo message="finish mkdir license"/>
+                                <echo message="start copy key to target folder"/>
+                                <copy file="src/main/release/license/key" tofile="${project.build.directory}/license/key"/>
+                                <echo message="finish copy key"/>
+                                <echo message="start copy license.lic to target folder"/>
+                                <copy file="src/main/release/license/license.lic" tofile="${project.build.directory}/license/license.lic"/>
+                                <echo message="finish copy license.lic"/>
+                                <echo message="start copy publicCerts.keystore to target folder"/>
+                                <copy file="src/main/release/license/publicCerts.keystore" tofile="${project.build.directory}/license/publicCerts.keystore"/>
+                                <echo message="finish copy publicCerts.keystore"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>version</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <replace file="${project.build.directory}/push.sh" token="@version@" value="${project.version}.${build.time}"/>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <replace file="${project.build.directory}/build.sh" token="@version@" value="${project.version}.${build.time}"/>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <replace file="${project.build.directory}/container.sh" token="@version@" value="${project.version}.${build.time}"/>
+                                <!--suppress UnresolvedMavenProperty -->
+                                <replace file="${project.build.directory}/Dockerfile" token="@version@" value="${project.version}.${build.time}"/>
+                                <replace file="${project.build.directory}/Dockerfile" token="@jar.version@" value="${project.version}"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>chmod</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="start exec chmod u+x shell"/>
+                                <chmod dir="${project.build.directory}/" perm="u+x" includes="*.sh"/>
+                                <chmod dir="${project.build.directory}/" perm="u+x" includes="backup"/>
+                                <chmod dir="${project.build.directory}/license" perm="u+x" includes="key"/>
+                                <echo message="finish exec chmod u+x shell"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>delete</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="start delete useless file in target"/>
+                                <delete dir="${project.build.directory}/antrun"/>
+                                <delete dir="${project.build.directory}/generated-sources"/>
+                                <delete dir="${project.build.directory}/maven-archiver"/>
+                                <delete dir="${project.build.directory}/maven-status"/>
+                                <delete dir="${project.build.directory}/classes"/>
+                                <delete file="${project.build.directory}/${project.artifactId}-${project.version}.jar"/>
+                                <delete file="${project.build.directory}/${project.artifactId}-${project.version}.jar.bak"/>
+                                <delete file="${project.build.directory}/${project.artifactId}-${project.version}.jar.original"/>
+                                <delete file="${project.build.directory}/checkstyle-cachefile"/>
+                                <delete file="${project.build.directory}/checkstyle-checker.xml"/>
+                                <delete file="${project.build.directory}/checkstyle-result.xml"/>
+                                <echo message="finish delete useless file"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>mv</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <target>
+                                <echo message="start change jar name"/>
+                                <move file="${project.build.directory}/${project.artifactId}-${project.version}-encrypted.jar"
+                                      tofile="${project.build.directory}/${project.artifactId}-${project.version}.jar"/>
+                                <delete dir="${project.build.directory}/antrun"/>
+                                <echo message="finish change jar name"/>
+                            </target>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.oven.githook</groupId>
+                <artifactId>githook</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                        <configuration>
+                            <platform>${platform}</platform>
+                            <hooks>
+                                <!--suppress MybatisXMapperXmlInspection, MavenModelInspection -->
+                                <pre-commit>
+                                    echo running code validation
+                                    exec ${env.MAVEN_HOME}/bin/mvn clean validate -f ${project.basedir}
+                                </pre-commit>
+                            </hooks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.oven.gitconfig</groupId>
+                <artifactId>gitconfig</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>install</goal>
+                        </goals>
+                        <configuration>
+                            <name>${git.user.name}</name>
+                            <email>${git.user.email}</email>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>
