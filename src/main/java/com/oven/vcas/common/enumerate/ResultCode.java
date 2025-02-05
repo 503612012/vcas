@@ -12,7 +12,7 @@ public enum ResultCode implements IResultCode {
     SUCCESS(200, "操作成功！"),
     SCENE_ALREADY_DELETE(200, "场景已删除！"),
 
-    UNKNOW_ERROR(3001, "未知错误！"),
+    UNKNOWN_ERROR(3001, "未知错误！"),
     SYSTEM_ERROR(3002, "系统错误！"),
     UPLOAD_ERROR(3003, "上传文件错误！"),
     FILE_NAME_EMPTY_ERROR(3004, "文件名称为空，请重新上传！"),
