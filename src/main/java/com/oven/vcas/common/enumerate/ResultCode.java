@@ -29,7 +29,7 @@ public enum ResultCode implements IResultCode {
     OVER_WRONG_NUM(4004, "密码错误超过5次，请联系管理人员解锁！"),
     SESSION_TIMEOUT(4005, "未登录或会话超时，请重新登录！"),
     LOSE_LOGIN(4006, "已掉线，请重新登录！"),
-    OTHER_LOGINED(4007, "会话失效，该账号已被其他人登录。请检查账号是否丢失或立即修改密码！"),
+    OTHER_ALREADY_LOGGED_IN(4007, "会话失效，该账号已被其他人登录。请检查账号是否丢失或立即修改密码！"),
     CAPTCHA_ERROR(4008, "验证码错误，请重新输入！"),
     CAPTCHA_IS_NONE(4009, "请输入验证码！"),
     OLD_PASSWORD_WRONG(4010, "原始密码错误！"),
